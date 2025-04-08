@@ -31,3 +31,7 @@ src: ./pages/whoami.md
 ---
 src: ./pages/back-to-basics/functional-interface.md
 ---
+
+---
+src: ./pages/back-to-basics/function-compositing.md
+---

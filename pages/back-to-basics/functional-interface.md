@@ -1,6 +1,6 @@
 ---
 layout: section
-transition: slide-down
+transition: slide-up
 ---
 # Bases
 
@@ -15,7 +15,7 @@ Interface qui n'as qu'une méthode à implémenter
 
 <<< @/snippets/functional-interface/fi-multiple-methods.java {all|4-5|all}{lines:true}
 
-<<< @/snippets/functional-interface/fi-multiple-methods-decoratorless.java {all|1}{lines:true}
+<<< @/snippets/functional-interface/fi-multiple-methods-decoratorless.java {all}{lines:true}
 
 ````
 <!-- Footer -->
@@ -51,15 +51,42 @@ Nouvelle syntaxe d'écriture d'une méthode
 <<< @/snippets/lambda-expression/FunctionImpl.java {all}{lines:true}
 
 ````
+<v-clicks>
 
+- Plus court
+- Plus clair
+- Plus concis
 
+🔉 Réduction de bruit
+
+</v-clicks>
 
 ---
- 
- # Programmation fonctionnelle
+layout: section
+---
 
- TODO
+# Référence de méthode
+Encore mieux ! 😎
 
 ---
 
  # Référence de méthode
+
+````md magic-move
+
+<<< @/snippets/lambda-expression/FunctionImpl.java {all}{lines:true}
+
+<<< @/snippets/method-reference/FunctionImpl.java {all}{lines:true}
+
+````
+
+<v-clicks>
+
+- Encore plus court
+- Encore plus clair
+- Encore plus concis
+- Nommage de variable inutile ⛱️
+
+🔉 <span v-mark.red="3">Réduction de bruit</span>
+
+</v-clicks>
