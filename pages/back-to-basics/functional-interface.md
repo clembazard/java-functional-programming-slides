@@ -20,7 +20,7 @@ Interface qui n'as qu'une méthode à implémenter
 ````
 <!-- Footer -->
 
-[Functional interfaces](https://www.baeldung.com/java-8-functional-interfaces)
+[Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
 
 ---
 
@@ -48,6 +48,17 @@ Nouvelle syntaxe d'écriture d'une méthode
 
 <<< @/snippets/functional-interface/FunctionImpl.java {all}{lines:true}
 
+```java
+public class MyClass {
+
+    // new style anonymous implementation - lambda expression
+    private final Function<String, String> greeter = who -> {
+        return "hello ".concat(who);
+    }
+
+}
+```
+
 <<< @/snippets/lambda-expression/FunctionImpl.java {all}{lines:true}
 
 ````
@@ -65,8 +76,8 @@ Nouvelle syntaxe d'écriture d'une méthode
 layout: section
 ---
 
-# Référence de méthode
-Encore mieux ! 😎
+# Encore mieux ! 😎
+Référence de méthode
 
 ---
 

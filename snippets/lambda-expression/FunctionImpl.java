@@ -1,6 +1,6 @@
 public class MyClass {
 
-    // new style anonymous implementation - lambda expression
+    // lambda expression (auto-return)
     private final Function<String, String> greeter = who -> "hello ".concat(who);
 
 }
