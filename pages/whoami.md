@@ -1,7 +1,6 @@
 ---
 layout: image-left
 image: https://cover.sli.dev
-anchor: meep
 ---
 
 # Clément RÉMOND

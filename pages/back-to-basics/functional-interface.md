@@ -1,6 +1,6 @@
 ---
 layout: section
-transition: slide-up
+transition: slide-down
 ---
  
 
@@ -42,6 +42,10 @@ layout: section
 # Lambda expressions
 
 Nouvelle syntaxe d'écriture d'une méthode
+
+<hr>
+
+Java 8+
 
 
 ---
