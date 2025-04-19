@@ -18,6 +18,8 @@ mdc: true
 # open graph
 # seoMeta:
 #  ogImage: https://cover.sli.dev
+# aspect ratio for the slides
+aspectRatio: 16/9
 ---
 
 # ☕ Programmation Fonctionnelle en Java sans grimacer 😬
@@ -26,6 +28,10 @@ Pour développeurs débutant et expérimentés
 
 ---
 src: ./pages/whoami.md
+---
+
+---
+src: ./pages/introduction.md
 ---
 
 ---
