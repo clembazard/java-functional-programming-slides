@@ -2,11 +2,16 @@
 layout: section
 transition: slide-down
 ---
- 
 
-# Bases
+# Java
 
-## Java
+ Bases
+
+ <hr/>
+
+<!-- footer -->
+
+[Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
 
 ---
 
@@ -22,9 +27,6 @@ Interface qui n'as qu'une méthode à implémenter
 <<< @/snippets/functional-interface/fi-multiple-methods-decoratorless.java {all}{lines:true}
 
 ````
-<!-- Footer -->
-
-[Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
 
 ---
 
