@@ -1,6 +1,6 @@
 ---
 layout: section
-transition: slide-down
+transition: slide-up
 ---
 
 # Function compositing
