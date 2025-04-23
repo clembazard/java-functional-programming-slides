@@ -11,6 +11,9 @@ transition: slide-down
 
 Java 8+
 
+<!-- footer -->
+[Baeldung - Optional](https://www.baeldung.com/java-optional)
+
 --- 
 
 # Optional
@@ -25,13 +28,10 @@ Java 8+
     - `ofNullable(T value)` Retourne une instance contenant la valeur ou vide
     - `empty()` Retourne une instance vide
     - `orElse(T other)`  Retourne la valeur contenu dans l'***Optional*** ou *other*
-- Transitions : 
+- Méthodes Transitions : 
     - `filter(Predicate<T> predicate)` Filtre le contenu
     - `map(Function<T, U> predicate)` ____Transforme____ le contenu
 </v-clicks>
-
-<!-- footer -->
-[Baeldung - Optional](https://www.baeldung.com/java-optional)
 
 ---
 
