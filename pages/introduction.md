@@ -68,6 +68,7 @@ Haskell Curry - Logicien & Mathématicien américain
 - Logique combinatoire
 - Fonction retourne une autre fonction
     - $\lambda x \cdot \lambda y \cdot x + y$
+    - ${\displaystyle f} x \mapsto {\displaystyle f} y \mapsto x + y$ (notation mathématique)
 
 
 ---
@@ -103,11 +104,11 @@ Haskell Curry - Logicien & Mathématicien américain
 - Compréhension / testing facile
 - Pas d'effet de bord
     - Adapté au traitements parrallèles / concurrents
-- Permet de traiter des fonctions comme des valeurs $\to$ 
+- Permet de traiter des fonctions comme des valeurs 
     - ex: passé en paramètre d'une fonction
 - Evalutation paresseuse "lazy"
     - Evalué uniquement quand nécessaire
-    - Limite les évaluations innutiles et répétées
+    - Limite les traitements innutiles et répétés
 
 --- 
 

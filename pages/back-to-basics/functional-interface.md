@@ -4,15 +4,19 @@ transition: slide-up
 ---
  
 
-# Bases
+# Java
 
-## Java
+## Les bases
+
+<!-- Footer -->
+
+[Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
 
 ---
 
 # Functional interface
 
-Interface qui n'as qu'une méthode à implémenter
+Interface qui n'a qu'une méthode à implémenter
 ````md magic-move
 
 <<< @/snippets/functional-interface/fi-single-method.java {all|4-5|1,4-5|all}{lines:true}
@@ -22,9 +26,6 @@ Interface qui n'as qu'une méthode à implémenter
 <<< @/snippets/functional-interface/fi-multiple-methods-decoratorless.java {all}{lines:true}
 
 ````
-<!-- Footer -->
-
-[Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
 
 ---
 
