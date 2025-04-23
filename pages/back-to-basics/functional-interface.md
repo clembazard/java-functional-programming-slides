@@ -1,14 +1,15 @@
 ---
 layout: section
-transition: slide-up
+transition: slide-down
 ---
- 
 
 # Java
 
-## Les bases
+ Bases
 
-<!-- Footer -->
+ <hr/>
+
+<!-- footer -->
 
 [Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
 
@@ -43,6 +44,10 @@ layout: section
 # Lambda expressions
 
 Nouvelle syntaxe d'écriture d'une méthode
+
+<hr>
+
+Java 8+
 
 
 ---

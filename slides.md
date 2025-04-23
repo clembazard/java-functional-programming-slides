@@ -41,3 +41,7 @@ src: ./pages/back-to-basics/functional-interface.md
 ---
 src: ./pages/back-to-basics/function-compositing.md
 ---
+
+---
+src: ./pages/optional.md
+---
