@@ -45,3 +45,9 @@ src: ./pages/back-to-basics/function-compositing.md
 ---
 src: ./pages/optional.md
 ---
+
+<!-- TODO maybe putting stream first ? -->
+
+---
+src: ./pages/predicate.md
+---
