@@ -142,8 +142,8 @@ Composition à priori ou à posteriori
         </tr>
         <tr>
             <td>Provider</td>
-            <td>T</td>
             <td>void</td>
+            <td>T</td>
         </tr>
         <tr>
             <td>Predicate</td>
