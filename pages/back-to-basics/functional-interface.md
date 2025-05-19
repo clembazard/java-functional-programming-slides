@@ -12,6 +12,7 @@ transition: slide-down
 <!-- footer -->
 
 [Functional interfaces - Baeldung](https://www.baeldung.com/java-8-functional-interfaces)
+[Lambda Expressions and Functional Interfaces: Tips and Best Practices - Baeldung](https://www.baeldung.com/java-8-lambda-expressions-tips)
 
 ---
 

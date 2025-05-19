@@ -49,5 +49,9 @@ src: ./pages/optional.md
 <!-- TODO maybe putting stream first ? -->
 
 ---
+src: ./pages/stream.md
+---
+
+---
 src: ./pages/predicate.md
 ---
