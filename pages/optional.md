@@ -37,7 +37,7 @@ Java 8+
 
 - Création
     - `of(T value)` Retourne une instance contenant la valeur 
-    - `ofNullable(T value)` Retourne une instance contenant la valeur potentiellement nulle
+    - `ofNullable(T value)` Retourne une instance contenant la valeur potentiellement vide
     - `empty()` Retourne une instance vide
 - Condition
     - `filter(Predicate<T> predicate)` Filtre conditionellement la valeur
