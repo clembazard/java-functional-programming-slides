@@ -27,6 +27,10 @@ aspectRatio: 16/9
 Pour développeurs débutant et expérimentés
 
 ---
+src: ./pages/word-cloud.md
+---
+
+---
 src: ./pages/whoami.md
 ---
 
