@@ -5,7 +5,7 @@
     <li><span href="#" data-weight="2">Optional</span></li>
     <li><span href="#" data-weight="4">Je connaissais pas cette syntax</span></li>
     <li><span href="#" data-weight="2">Stream</span></li>
-    <li><span href="#" data-weight="3">Fonctionel ? </span></li>
+    <li><span href="#" data-weight="3">Fonctionnel ? </span></li>
     <li><span href="#" data-weight="5">Intéressant</span></li>
     <li><span href="#" data-weight="6">Je savais pas qu'on pouvait faire ça ! 🤯</span></li>
     <li><span href="#" data-weight="2">Consumer</span></li>
