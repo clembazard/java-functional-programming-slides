@@ -54,8 +54,6 @@ Java 8+
 1. Source
 2. Opération(s) intermédiaire(s)
 3. Opération terminale
-    - ⚠️ Une seule par ***Stream***
-    - Retourne un résultat qui n'est pas un ***Stream***
 
 ```java {all|1|2|3|all}{lines:true}
 List<String> elements = Stream.of("a", "b", "c")
@@ -155,7 +153,7 @@ La valeur de départ peut être de n'importe quel type
 
 - Retournent un nouveau Stream
 - Chainables
-- Paresseuses / sans effets
+- Lazy (paresseuses / sans effets)
     - Invoquées à l'éxécution d'une opération terminale
 
 ````md magic-move
@@ -177,7 +175,9 @@ long size = list.stream()
 ```
 ````
 
-
+<!-- 
+Processing streams lazily allows for significant efficiencies; in a pipeline such as the filter-map-sum example above, filtering, mapping, and summing can be fused into a single pass on the data, with minimal intermediate state. Laziness also allows avoiding examining all the data when it is not necessary; for operations such as "find the first string longer than 1000 characters"
+-->
 
 ---
 
@@ -232,3 +232,82 @@ long size = list.stream()
 
 - `map(Function<T, U> mapper)` Transforme
 - `flatMap(Function<T, Stream<U>> mapper)` Transforme et applatit le Stream résultant
+
+---
+
+# Stream
+
+## Opération terminale
+
+- Peuvent traverser le ***Stream*** pour produire un résultat / un effet de bord
+- ⚠️ Une seule par ***Stream*** maximum
+- Le pipeline est considéré consommé après
+- Retourne un résultat qui n'est pas un ***Stream***
+- Invocation immédiate (eager)
+
+````md magic-move
+```java {all|4|5}{lines:true}
+Stream<String> stream = Stream.of("a", "b", "c")
+    .filter(element -> element.contains("b"));
+
+Optional<String> anyElement = stream.findAny(); // OK
+Optional<String> firstElement = stream.findFirst(); // throws IllegalStateException
+```
+
+```java {all|5-6}{lines:true}
+List<String> elements = Stream.of("a", "b", "c")
+    .filter(element -> element.contains("b"))
+    .toList();
+
+Optional<String> anyElement = elements.stream().findAny(); // OK
+Optional<String> firstElement = elements.stream().findFirst(); // OK
+```
+````
+
+---
+
+# Stream
+
+## Opération terminale - Trivia
+
+- Pas d'interférence avec la source
+- Source modifiable jusqu'à invocation de l'opération terminale
+
+```java {all|4|5}{lines:true}
+List<String> list = new ArrayList(Arrays.asList("one", "two"));
+Stream<String> stream = list.stream();
+
+list.add("three");
+
+String joined = stream.collect(Collectors.joining(" "));
+// joined = "one two three"
+```
+
+---
+
+# Stream
+
+## Opération terminale
+
+- `boolean allMatch(Predicate<T> predicate)`
+- `boolean anyMatch(Predicate<T> predicate)`
+- `boolean noneMatch(Predicate<T> predicate)`
+
+<hr/>
+
+- `Optional<T> findFirst(Predicate<T> predicate)`
+- `Optional<T> findAny(Predicate<T> predicate)`
+- `Optional<T> min(Comparator<T> comparator);`
+- `Optional<T> max(Comparator<T> comparator);`
+
+<hr/>
+
+- `long count()`
+- `T[] toArray()`
+- `List<T> toList()`
+
+<hr/>
+
+- `void forEach(Consumer<T> consumer)`
+- `R collect(Collecter<T, A, R> consumer)`
+- `R reduce(Collecter<T, A, R> consumer)`
