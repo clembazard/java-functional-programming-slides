@@ -27,6 +27,8 @@ aspectRatio: 16/9
 Pour développeurs débutant et expérimentés
 
 ---
+layout: quote
+---
 
 # Inspiration
 
