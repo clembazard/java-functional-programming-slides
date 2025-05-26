@@ -7,7 +7,8 @@ transition: slide-up
 
 De quoi ?!
 
-<!-- footer -->
+<hr/>
+
 [Functional programming paradigm - GeeksForGeeks](https://www.geeksforgeeks.org/functional-programming-paradigm/)
 <br/>
 [Programmation fonctionnelle - Wikipedia](https://fr.wikipedia.org/wiki/Programmation_fonctionnelle)
@@ -43,7 +44,7 @@ image: assets/church.jpg
 
 
 ---
-layout: fact
+layout: statement
 ---
 
 ## Fun fact

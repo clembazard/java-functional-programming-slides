@@ -27,6 +27,12 @@ aspectRatio: 16/9
 Pour développeurs débutant et expérimentés
 
 ---
+
+# Inspiration
+
+<<< @/snippets/curiosity/curiosity-1.java {all}{lines:true}
+
+---
 src: ./pages/word-cloud.md
 ---
 
@@ -62,3 +68,9 @@ src: ./pages/stream.md
 ---
 src: ./pages/curiosity.md
 ---
+
+---
+layout : end
+---
+
+# 😉 Prenez soin du code ! 

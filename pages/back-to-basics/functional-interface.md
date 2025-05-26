@@ -85,7 +85,7 @@ public class MyClass {
 </v-clicks>
 
 ---
-layout: section
+layout: center
 transition: fade
 ---
 
