@@ -58,3 +58,7 @@ src: ./pages/predicate.md
 ---
 src: ./pages/stream.md
 ---
+
+---
+src: ./pages/curiosity.md
+---
