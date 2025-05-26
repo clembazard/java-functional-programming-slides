@@ -469,7 +469,7 @@ transition: fade
 
 ````md magic-move
 
-```java {all|2|3|4-6}{lines:true}
+```java {all|2|3|4-7|9}{lines:true}
 int reducedParams = Stream.of(1, 2, 3)
     .reduce(10, 
     (a, b) -> a + b, 
@@ -481,7 +481,7 @@ int reducedParams = Stream.of(1, 2, 3)
 // reducedParams = 16 (10 + 1 + 2 + 3)
 ```
 
-```java {2|10-12}{lines:true}
+```java {2|5-8|10-12}{lines:true}
 int reducedParams = Stream.of(1, 2, 3)
     .parallel()
     .reduce(10, 
