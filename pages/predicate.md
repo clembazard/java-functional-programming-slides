@@ -28,7 +28,7 @@ Java 8+
 
 # Predicate
 
-## Exemple basique
+## Exemple 
 
 ```java {all|5|all}{lines:true}
 @Test

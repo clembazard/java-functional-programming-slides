@@ -124,7 +124,7 @@ Composition à priori ou à posteriori
 
 --- 
 
-# Interfaces fonctionnelle incluse
+# Interfaces fonctionnelle incluse 🧠
 
 <table>
     <thead>

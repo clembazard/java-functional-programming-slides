@@ -54,7 +54,7 @@ Java 8+
 
 ## Impératif vs Fonctionnel
 
-```java
+```java {all}{lines:true}
 // Syntaxe impérative
 User user = userRepositoryWithNull.findById("2");
 String upperCasedName = "";
@@ -68,7 +68,7 @@ if (user != null) {
 
 <hr/>
 
-```java
+```java {all}{lines:true}
 // Syntaxe déclarative (fonctionnelle)
 String upperCasedName = userRepositoryWithOptional.findById("2") // retourne un Optional<User>
     .filter(u -> u.getName().startsWith("M")) // filtrage conditionnel
@@ -80,7 +80,7 @@ String upperCasedName = userRepositoryWithOptional.findById("2") // retourne un 
 
 # Optional 
 
-```java
+```java {all}{lines:true}
 // Avec lambda
 String upperCasedName = userRepositoryWithOptional.findById("2")
     .filter(u -> u.getName().startsWith("M"))
@@ -90,7 +90,7 @@ String upperCasedName = userRepositoryWithOptional.findById("2")
 
 <hr/>
 
-```java
+```java {all}{lines:true}
 Predicate<User> hasNameStartingWithM = u -> u.getName().startsWith("M");
 Function<User, String> extractNameToUpperCase = u -> u.getName().toUpperCase();
 

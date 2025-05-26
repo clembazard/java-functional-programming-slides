@@ -1,6 +1,6 @@
 ---
 layout: section
-transition: slide-down
+transition: slide-up
 ---
 
 # Java
@@ -52,7 +52,8 @@ Java 8+
 
 
 ---
-
+transition: fade
+---
 # Expression lambda
 
 ````md magic-move
@@ -85,6 +86,7 @@ public class MyClass {
 
 ---
 layout: section
+transition: fade
 ---
 
 # Encore mieux ! 😎
@@ -102,11 +104,12 @@ Référence de méthode
 
 ````
 
-<v-clicks>
 
 - Encore plus court
 - Encore plus clair
 - Encore plus concis
+<v-clicks>
+
 - Nommage de variable inutile ⛱️
 
 🔉 <span v-mark.red="3">Réduction de bruit</span>

@@ -99,7 +99,7 @@ Stream<String> streamOfArrayPart = Arrays.stream(arr, 1, 3); // {"b", "c"}
 - Construction du Stream au fil de l'eau.
 - ⚠️ Typage nécessaire sur la méthode `<T>builder()` 
 
-```java {all|1}{lines:true}
+```java {all}{lines:true}
 Stream<String> streamBuilder = Stream.<String>builder()
     .add("a")
     .add("b")
@@ -107,15 +107,17 @@ Stream<String> streamBuilder = Stream.<String>builder()
     .build();
 ```
 
+<!-- Sans le typage diamand ça retourne un Stream<Object> -->
+
 ---
 
 # Stream
 
 ## Source - Génération  
 
-- La méthode `generate()` prend un `Supplier<T>` pour la génération d'élément
-- Retourne un stream infini (jusqu'à saturation de la mémoire)
-- La méthode `limit(int)` permet de spécifier la taille souhaitée
+- `generate()` prend un `Supplier<T>` pour la génération d'élément
+- Retourne un stream infini
+- `limit(int)` permet de spécifier la taille souhaitée
 
 ```java {all}{lines:true}
 Stream<String> streamGenerated = Stream.generate(() -> "element")
@@ -129,11 +131,11 @@ Stream<String> streamGenerated = Stream.generate(() -> "element")
 
 ## Source - Génération itérative
 
-- La méthode `iterate()` prend :
-    - Une valeur de départ 
-    - Un `UnaryOperator<T>` pour la génération des itérations
-- Retourne un stream infini (jusqu'à saturation de la mémoire)
-- La méthode `limit(int)` permet de spécifier la taille souhaitée
+- `iterate()` prend :
+    - Une valeur initiale 
+    - Un `UnaryOperator<T>` générer les itérations
+- Retourne un stream infini
+- `limit(int)` permet de spécifier la taille souhaitée
 
 ```java {all}{lines:true}
 Stream<Integer> streamIterated = Stream.iterate(0, n -> n + 2)
@@ -233,13 +235,13 @@ long size = list.stream()
 ## Opérations intermédiaires
 
 - `map(Function<T, U> mapper)` Transforme chaque élément
-- `flatMap(Function<T, Stream<U>> mapper)` Transforme chaque élément et applatit le Stream résultant
+- `flatMap(Function<T, Stream<U>> mapper)` Transforme chaque élément, applatit le Stream résultant
 - `peek(Consumer<T> consumer)` Applique le ***consumer*** sur chaque élément puis retourne la source  <br/> 
     - ⚠️ Effet de bord possible
 
 <br/>
 
-- `sorted()` Trie par ordre croissant
+- `sorted()` Trie par ordre croissant 
     - Applicable sur les objets implémentant `Comparable`
 - `sorted(Comparator<T> comparator)` Trie selon le comparateur fourni
 
@@ -251,8 +253,8 @@ long size = list.stream()
 
 - Peuvent traverser le ***Stream*** pour produire un résultat / un effet de bord
 - ⚠️ Une seule par ***Stream*** maximum
-- Le pipeline est considéré consommé après
-- Retourne un résultat qui n'est pas un ***Stream***
+    - Après le ***Stream*** est considéré consommé 
+    - Retourne un résultat qui n'est pas un ***Stream***
 - Invocation immédiate (eager)
 
 ````md magic-move
@@ -273,6 +275,8 @@ Optional<String> anyElement = elements.stream().findAny(); // OK
 Optional<String> firstElement = elements.stream().findFirst(); // OK
 ```
 ````
+
+<!-- Il faut repartir de la source pour effectuer n pipelines -->
 
 ---
 
@@ -325,14 +329,12 @@ String joined = stream.collect(Collectors.joining(" "));
 
 <br/>
 
-- `Optional<R> reduce(BinaryOperator<T> accumulator)` Réduit l'ensemble des éléments au résultat produit par l'*accumulator*
-- `R reduce(T identity, BinaryOperator<T> accumulator)` Réduit l'ensemble des éléments au résultat produit par l'*accumulator*
-- `R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)` Réduit l'ensemble des éléments au résultat produit par l'*accumulator*
+- `Optional<R> reduce(BinaryOperator<T> accumulator)` <br/> Réduit l'ensemble des éléments à un résultat unique selon l'*accumulator*
 - `R collect(Collector<T, A, R> collector)` Collecte les éléments selon le collector fourni
 
 <br/>
 
-- `void forEach(Consumer<T> consumer)` Applique le Consumer pour chaque élément de la liste (effet de bord)
+- `void forEach(Consumer<T> consumer)` Applique le *consumer* pour chaque élément de la liste <br/>(effet de bord)
 
 ---
 
@@ -424,10 +426,9 @@ transition: fade
 ```java {all}{lines:true}
 OptionalInt reduced = IntStream.range(1, 4)
     .reduce((a, b) -> a + b);
+
+// reduced = 6 (1 + 2 + 3)
 ```
-
-`reduced` = 6 (1 + 2 + 3)
-
 
 ---
 transition: fade
@@ -443,13 +444,14 @@ transition: fade
 - `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
 
 
-```java {all|2|3}{lines:true}
+```java {all|2|3|5}{lines:true}
 int reducedTwoParams = IntStream.range(1, 4)
     .reduce(10, 
         (a, b) -> a + b);
+
+// reducedTwoParams = 16 (10 + 1 + 2 + 3)
 ```
 
-`reducedTwoParams` = 16 (10 + 1 + 2 + 3)
 
 ---
 transition: fade
@@ -475,9 +477,11 @@ int reducedParams = Stream.of(1, 2, 3)
         log.info("combiner was called");
         return a + b;
     });
+
+// reducedParams = 16 (10 + 1 + 2 + 3)
 ```
 
-```java {2}{lines:true}
+```java {2|10-12}{lines:true}
 int reducedParams = Stream.of(1, 2, 3)
     .parallel()
     .reduce(10, 
@@ -486,35 +490,10 @@ int reducedParams = Stream.of(1, 2, 3)
         log.info("combiner was called");
         return a + b;
     });
+
+/* reducedParams = 36 
+ * Aggrétation parrallèle: (10 + 1 = 11; 10 + 2 = 12; 10 + 3 = 13;)
+ * Combinaison : (11 + 12 = 23; 23 + 13 = 36) */
 ```
 
 ````
-
-`reducedParams` = 16 (10 + 1 + 2 + 3)
-
----
-transition: fade
----
-
-# Stream
-
-## Opération terminale - Reduce
-
-`R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)`
-
-```java {all}{lines:true}
-int reducedParams = Stream.of(1, 2, 3)
-    .parallel()
-    .reduce(10, 
-    (a, b) -> a + b, 
-    (a, b) -> {
-        log.info("combiner was called");
-        return a + b;
-    });
-```
-
-`reducedParams` = 36 
-
-Aggrétation parrallèle: (10 + 1 = 11; 10 + 2 = 12; 10 + 3 = 13;)
-
-Combinaison : (11 + 12 = 23; 23 + 13 = 36)
