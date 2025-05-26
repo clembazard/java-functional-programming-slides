@@ -216,22 +216,32 @@ long size = list.stream()
 
 ## Opérations intermédiaires
 
+- `limit(long maxSize)` Retourne un stream tronqué d'une taille maximale de `maxSize`
+- `skip(long n)` Retourne un stream les elements restant après avoir passé les n premiers
+- `distinct()` Retourne un stream sans doublon (utilise la méthode `equals()`)
+
+<br/>
+
 - `filter(Predicate<T> predicate)` Prend les éléments correspondants au prédicat
 - `takeWhile(Predicate<T> predicate)` Prend les premiers éléments tant que le prédicat correspont
 - `dropWhile(Predicate<T> predicate)` Ignore les premiers éléments tant que le prédicat correspont
 
-<hr/>
+---
 
-- `limit(long maxSize)` Limite
-- `skip(long n)` Ignore
-- `distinct()` Dédoublonne
+# Stream
+
+## Opérations intermédiaires
+
+- `map(Function<T, U> mapper)` Transforme chaque élément
+- `flatMap(Function<T, Stream<U>> mapper)` Transforme chaque élément et applatit le Stream résultant
+- `peek(Consumer<T> consumer)` Applique le ***consumer*** sur chaque élément puis retourne la source  <br/> 
+    - ⚠️ Effet de bord possible
+
+<br/>
+
 - `sorted()` Trie par ordre croissant
-- `sorted(Comparator<T> comparator)` Trie selon le comparateur si fourni
-
-<hr/>
-
-- `map(Function<T, U> mapper)` Transforme
-- `flatMap(Function<T, Stream<U>> mapper)` Transforme et applatit le Stream résultant
+    - Applicable sur les objets implémentant `Comparable`
+- `sorted(Comparator<T> comparator)` Trie selon le comparateur fourni
 
 ---
 
@@ -268,12 +278,12 @@ Optional<String> firstElement = elements.stream().findFirst(); // OK
 
 # Stream
 
-## Opération terminale - Trivia
+## Opération terminale - Bon à savoir
 
 - Pas d'interférence avec la source
 - Source modifiable jusqu'à invocation de l'opération terminale
 
-```java {all|4|5}{lines:true}
+```java {all}{lines:true}
 List<String> list = new ArrayList(Arrays.asList("one", "two"));
 Stream<String> stream = list.stream();
 
@@ -289,25 +299,222 @@ String joined = stream.collect(Collectors.joining(" "));
 
 ## Opération terminale
 
-- `boolean allMatch(Predicate<T> predicate)`
-- `boolean anyMatch(Predicate<T> predicate)`
-- `boolean noneMatch(Predicate<T> predicate)`
+- `boolean allMatch(Predicate<T> predicate)` Retourne *true* si tous éléments correspondent
+- `boolean anyMatch(Predicate<T> predicate)` Retourne *true* si au moins un élément correspond
+- `boolean noneMatch(Predicate<T> predicate)` Retourne *true* si aucun élément ne correspond
+
+<br/>
+
+- `Optional<T> findFirst(Predicate<T> predicate)` Retourne le premier correspondant
+- `Optional<T> findAny(Predicate<T> predicate)` Retourne n'importe lequel correspondant <br/> (***Stream*** parrallèle ou infini)
+
+<br/>
+
+- `Optional<T> min(Comparator<T> comparator);` Retourne le minimum selon le comparator
+- `Optional<T> max(Comparator<T> comparator);` Retourne le maximum selon le comparator
+
+---
+
+# Stream
+
+## Opération terminale
+
+- `long count()` Compte les éléments du Stream
+- `T[] toArray()` Collecte les éléments dans un tableau
+- `List<T> toList()` Collecte les éléments dans une liste
+
+<br/>
+
+- `Optional<R> reduce(BinaryOperator<T> accumulator)` Réduit l'ensemble des éléments au résultat produit par l'*accumulator*
+- `R reduce(T identity, BinaryOperator<T> accumulator)` Réduit l'ensemble des éléments au résultat produit par l'*accumulator*
+- `R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)` Réduit l'ensemble des éléments au résultat produit par l'*accumulator*
+- `R collect(Collector<T, A, R> collector)` Collecte les éléments selon le collector fourni
+
+<br/>
+
+- `void forEach(Consumer<T> consumer)` Applique le Consumer pour chaque élément de la liste (effet de bord)
+
+---
+
+# Stream
+
+## Opération terminale - Collect
+
+```java {all}{lines:true}
+List<Product> productList = List.of(new Product(23, "potatoes"),
+    new Product(14, "orange"), 
+    new Product(13, "lemon"),
+    new Product(23, "bread"), 
+    new Product(13, "sugar"));
+```
 
 <hr/>
 
-- `Optional<T> findFirst(Predicate<T> predicate)`
-- `Optional<T> findAny(Predicate<T> predicate)`
-- `Optional<T> min(Comparator<T> comparator);`
-- `Optional<T> max(Comparator<T> comparator);`
+````md magic-move
 
-<hr/>
+<!-- to list -->
+```java {all}{lines:true}
+List<String> collectorCollection = productList.stream()
+    .map(Product::getName)
+    .collect(Collectors.toList());
+```
 
-- `long count()`
-- `T[] toArray()`
-- `List<T> toList()`
+<!-- toString -->
+```java {all}{lines:true}
+String listToString = productList.stream()
+    .map(Product::getName)
+    .collect(Collectors.joining(", "));
+```
 
-<hr/>
+<!-- toAverage -->
+```java {all}{lines:true}
+double averagePrice = productList.stream()
+    .collect(Collectors.averagingInt(Product::getPrice));
+```
 
-- `void forEach(Consumer<T> consumer)`
-- `R collect(Collecter<T, A, R> consumer)`
-- `R reduce(Collecter<T, A, R> consumer)`
+<!-- toSum -->
+```java {all}{lines:true}
+int summingPrice = productList.stream()
+    .collect(Collectors.summingInt(Product::getPrice));
+```
+
+<!-- groupingBy -->
+```java {all}{lines:true}
+Map<Integer, List<Product>> collectorMapOfLists = productList.stream()
+  .collect(Collectors.groupingBy(Product::getPrice));
+```
+
+````
+
+<!-- 
+ Examples: 
+ - toList
+ - toString
+ - toAverage
+ - toSum
+ - groupingBy
+-->
+
+---
+transition: fade
+---
+
+# Stream
+
+## Opération terminale - Reduce
+
+- 3 variantes
+    - `Optional<R> reduce(BinaryOperator<T> accumulator)` 
+    - `R reduce(T identity, BinaryOperator<T> accumulator)` 
+    - `R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)`
+
+---
+transition: fade
+---
+
+# Stream
+
+## Opération terminale - Reduce
+
+`Optional<R> reduce(BinaryOperator<T> accumulator)`
+
+- `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
+
+<br/>
+```java {all}{lines:true}
+OptionalInt reduced = IntStream.range(1, 4)
+    .reduce((a, b) -> a + b);
+```
+
+`reduced` = 6 (1 + 2 + 3)
+
+
+---
+transition: fade
+---
+
+# Stream
+
+## Opération terminale - Reduce
+
+`R reduce(T identity, BinaryOperator<T> accumulator)`
+
+- `identity` Valeur initiale pour l'accumulator / Valeur par défaut si le ***Stream*** est vide
+- `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
+
+
+```java {all|2|3}{lines:true}
+int reducedTwoParams = IntStream.range(1, 4)
+    .reduce(10, 
+        (a, b) -> a + b);
+```
+
+`reducedTwoParams` = 16 (10 + 1 + 2 + 3)
+
+---
+transition: fade
+---
+
+# Stream
+
+## Opération terminale - Reduce
+
+`R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)`
+
+- `identity` Valeur initiale pour l'accumulator / Valeur par défaut si le ***Stream*** est vide
+- `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
+- `combiner` Fonction qui aggrège les résultats de l'accumulator - parrallèle uniquement
+
+````md magic-move
+
+```java {all|2|3|4-6}{lines:true}
+int reducedParams = Stream.of(1, 2, 3)
+    .reduce(10, 
+    (a, b) -> a + b, 
+    (a, b) -> {
+        log.info("combiner was called");
+        return a + b;
+    });
+```
+
+```java {2}{lines:true}
+int reducedParams = Stream.of(1, 2, 3)
+    .parallel()
+    .reduce(10, 
+    (a, b) -> a + b, 
+    (a, b) -> {
+        log.info("combiner was called");
+        return a + b;
+    });
+```
+
+````
+
+`reducedParams` = 16 (10 + 1 + 2 + 3)
+
+---
+transition: fade
+---
+
+# Stream
+
+## Opération terminale - Reduce
+
+`R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)`
+
+```java {all}{lines:true}
+int reducedParams = Stream.of(1, 2, 3)
+    .parallel()
+    .reduce(10, 
+    (a, b) -> a + b, 
+    (a, b) -> {
+        log.info("combiner was called");
+        return a + b;
+    });
+```
+
+`reducedParams` = 36 
+
+Aggrétation parrallèle: (10 + 1 = 11; 10 + 2 = 12; 10 + 3 = 13;)
+
+Combinaison : (11 + 12 = 23; 23 + 13 = 36)
