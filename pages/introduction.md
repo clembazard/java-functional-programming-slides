@@ -44,32 +44,15 @@ image: assets/church.jpg
 
 
 ---
-layout: statement
+layout: image-left
+image: /assets/turing.jpg
 ---
 
-## Fun fact
+# Fun fact
 
-![Alan Turing](/assets/turing.jpg)
+## 
 
-**Alan Turing** (étudiant d'**Alonzo Chuch**) a créé la machine de **Turing**, laquelle a mené aux fondations de la programmation <span v-mark="0">impérative</span>.
-
-<style>
-img {
-    max-height: 20vh;
-    display: block;
-    margin: auto;
-    /* frame*/
-    background: #fff;
-    padding: 15px;
-    border-style: solid;
-    border-width: 15px;
-    border-top-color: lighten(#000, 20%);
-    border-right-color: lighten(#000, 0%);
-    border-bottom-color: lighten(#000, 20%);
-    border-left-color: lighten(#000, 0%);
-    box-shadow: 2px 2px 4px rgba(0,0,0,.6);
-}
-</style>
+**Alan Turing**, a créé la machine de **Turing**, <br/> laquelle a mené aux fondations de la programmation <span v-mark="0">impérative</span>, <br/> était étudiant d'**Alonzo Chuch**.
 
 ---
 
