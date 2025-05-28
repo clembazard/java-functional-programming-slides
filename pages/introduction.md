@@ -115,12 +115,12 @@ Haskell Curry - Logicien & Mathématicien américain
 
 - Compréhension / testing facile
 - Pas d'effet de bord
-    - Adapté au traitements parrallèles / concurrents
+    - Adapté aux traitements parrallèles / concurrents
 - Permet de traiter des fonctions comme des valeurs 
     - ex: passé en paramètre d'une fonction
-- Evalutation paresseuse "lazy"
+- Evaluation paresseuse "lazy"
     - Evalué uniquement quand nécessaire
-    - Limite les traitements innutiles et répétés
+    - Limite les traitements inutiles et répétés
 
 --- 
 
