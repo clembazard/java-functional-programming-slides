@@ -72,7 +72,7 @@ if (user != null) {
 // Syntaxe déclarative (fonctionnelle)
 String upperCasedName = userRepositoryWithOptional.findById("2") // retourne un Optional<User>
     .filter(u -> u.getName().startsWith("M")) // filtrage conditionnel
-    .map(u -> u.getName().toUpperCase()) // transfor me si présent
+    .map(u -> u.getName().toUpperCase()) // transforme si présent
     .orElse(""); // valeur par défaut si vide
 ```
 

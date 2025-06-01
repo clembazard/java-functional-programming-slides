@@ -210,7 +210,7 @@ long size = list.stream()
 ```
 ````
 
-<span v-click>🧠 Plaçons les opérations qui réduisent le stream avant les opération qui s'appliquent à chaque élément</span>
+<span v-click>🧠 Plaçons les opérations qui réduisent le stream avant les opérations qui s'appliquent à chaque élément</span>
 
 ---
 
@@ -225,8 +225,8 @@ long size = list.stream()
 <br/>
 
 - `filter(Predicate<T> predicate)` Prend les éléments correspondants au prédicat
-- `takeWhile(Predicate<T> predicate)` Prend les premiers éléments tant que le prédicat correspont
-- `dropWhile(Predicate<T> predicate)` Ignore les premiers éléments tant que le prédicat correspont
+- `takeWhile(Predicate<T> predicate)` Prend les premiers éléments tant que le prédicat correspond
+- `dropWhile(Predicate<T> predicate)` Ignore les premiers éléments tant que le prédicat correspond
 
 ---
 
