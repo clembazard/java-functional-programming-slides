@@ -49,7 +49,7 @@ transition: fade
 
 # Predicate
 
-## Critères mutiples    
+## Critères multiples    
 
 ```java{all}{lines:true}
 List<String> names = List.of("Adam", "Alexander", "John", "Tom");

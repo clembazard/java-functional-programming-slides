@@ -31,7 +31,7 @@ image: /church.jpg
 - Fonctions (mathématiques) pures
     - Repose sur le *λ-calcul*
 - Se concentre sur <span v-mark>*quoi*</span> résoudre, plutôt que <span v-mark>*comment*</span> résoudre
-- Cadre théorique pour décrire des fonctions et leur évalutation
+- Cadre théorique pour décrire des fonctions et leur évaluation
     - Développé par **Alonzo Church** (1930)
     - Capacité de calcul comparable à la machine de **Turing**
 
@@ -90,11 +90,11 @@ Haskell Curry - Logicien & Mathématicien américain
 ## Concepts clé
 
 1. Fonctions pures
-    - Comportement dépandant uniquement de ses arguments $\to$ prédictible
+    - Comportement dépendant uniquement de ses arguments $\to$ prédictible
 2. Fonctions sont des variables de classe
     - Peuvent consommer / retourner d'autres fonctions (ordre supérieur)
 3. Variables immuables
-    - Etat constant, limite les potentiels effets de bord
+    - État constant, limite les potentiels effets de bord
 4. Transparence référentielle
     - Pas d'instruction d'affectation 
 5. Récursion
@@ -103,7 +103,7 @@ Haskell Curry - Logicien & Mathématicien américain
 <!--
 - Transparence référentielle
     - Stocker une valeur ? Créer une nouvelle variable
-    - Elimine les chances d'avoir des effets de bord
+    - Élimine les chances d'avoir des effets de bord
         - Une variable peut être remplacé par sa valeur n'importe où dans l'exécution
  -->
 
@@ -115,11 +115,11 @@ Haskell Curry - Logicien & Mathématicien américain
 
 - Compréhension / testing facile
 - Pas d'effet de bord
-    - Adapté aux traitements parrallèles / concurrents
+    - Adapté aux traitements parallèles / concurrents
 - Permet de traiter des fonctions comme des valeurs 
     - ex: passé en paramètre d'une fonction
 - Evaluation paresseuse "lazy"
-    - Evalué uniquement quand nécessaire
+    - Évalué uniquement quand nécessaire
     - Limite les traitements inutiles et répétés
 
 --- 
@@ -159,6 +159,6 @@ Programmation réactive:
 
 
 Facts : 
-Whatsapp: Erlang pour ses besoin traitements conccurents
+Whatsapp: Erlang pour ses besoin traitements concurrents
 Facebook: Haskell dans son système anti-spam
 -->

@@ -10,7 +10,7 @@
     <li><span href="#" data-weight="6">Je savais pas qu'on pouvait faire ça ! 🤯</span></li>
     <li><span href="#" data-weight="2">Consumer</span></li>
     <li><span href="#" data-weight="2">Predicate</span></li>
-    <li><span href="#" data-weight="3">Comment on débug ?</span></li>
+    <li><span href="#" data-weight="3">Comment on debug ?</span></li>
     <li><span href="#" data-weight="2">Provider</span></li>
     <li><span href="#" data-weight="5">C'est optimisé ?</span></li>
     <li><span href="#" data-weight="4">Le lead veux pas...</span></li>

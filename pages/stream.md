@@ -37,7 +37,7 @@ Java 8+
     - `ofNullable(T value)` Retourne une instance contenant la valeur, potentiellement vide
     - `empty()` Retourne une instance vide
 - Condition
-    - `filter(Predicate<T> predicate)` Filtre conditionellement la valeur
+    - `filter(Predicate<T> predicate)` Filtre conditionnellement la valeur
 - Transformation
     - `map(Function<T, U> predicate)` Transforme la valeur
 - Sélection
@@ -67,7 +67,7 @@ List<String> elements = Stream.of("a", "b", "c")
 
 # Stream
 
-## Source - Creation 
+## Source - Création 
 
 - À partir de valeurs
 
@@ -107,7 +107,7 @@ Stream<String> streamBuilder = Stream.<String>builder()
     .build();
 ```
 
-<!-- Sans le typage diamand ça retourne un Stream<Object> -->
+<!-- Sans le typage diamant ça retourne un Stream<Object> -->
 
 ---
 
@@ -154,9 +154,9 @@ La valeur de départ peut être de n'importe quel type
 ## Opérations intermédiaires
 
 - Retournent un nouveau Stream
-- Chainables
+- Chainable
 - Lazy (paresseuses / sans effets)
-    - Invoquées à l'éxécution d'une opération terminale
+    - Invoquées à l’exécution d'une opération terminale
 
 ````md magic-move
 ```java {all}{lines:true}
@@ -185,7 +185,7 @@ Processing streams lazily allows for significant efficiencies; in a pipeline suc
 
 # Stream
 
-## Opérations intermédiaires - Ordre du chainage
+## Opérations intermédiaires - Ordre de chaînage
 
 
 ```java {all}{lines:true}
@@ -235,7 +235,7 @@ long size = list.stream()
 ## Opérations intermédiaires
 
 - `map(Function<T, U> mapper)` Transforme chaque élément
-- `flatMap(Function<T, Stream<U>> mapper)` Transforme chaque élément, applatit le Stream résultant
+- `flatMap(Function<T, Stream<U>> mapper)` Transforme chaque élément, aplatit le Stream résultant
 - `peek(Consumer<T> consumer)` Applique le ***consumer*** sur chaque élément puis retourne la source  <br/> 
     - ⚠️ Effet de bord possible
 
@@ -276,7 +276,7 @@ Optional<String> firstElement = elements.stream().findFirst(); // OK
 ```
 ````
 
-<!-- Il faut repartir de la source pour effectuer n pipelines -->
+<!-- Il faut répartir de la source pour effectuer n pipelines -->
 
 ---
 
@@ -420,7 +420,7 @@ transition: fade
 
 `Optional<R> reduce(BinaryOperator<T> accumulator)`
 
-- `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
+- `accumulator` Fonction qui spécifie la logique d'aggrégation des éléments
 
 <br/>
 ```java {all}{lines:true}
@@ -441,7 +441,7 @@ transition: fade
 `R reduce(T identity, BinaryOperator<T> accumulator)`
 
 - `identity` Valeur initiale pour l'accumulator / Valeur par défaut si le ***Stream*** est vide
-- `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
+- `accumulator` Fonction qui spécifie la logique d'aggrégation des éléments
 
 
 ```java {all|2|3|5}{lines:true}
@@ -464,7 +464,7 @@ transition: fade
 `R reduce(U identity, BiFunction<U, T, U> accumulator, BinaryOperator<T> combiner)`
 
 - `identity` Valeur initiale pour l'accumulator / Valeur par défaut si le ***Stream*** est vide
-- `accumulator` Fonction qui spécifie la logic d'aggrégation des éléments
+- `accumulator` Fonction qui spécifie la logique d'aggrégation des éléments
 - `combiner` Fonction qui aggrège les résultats de l'accumulator - parrallèle uniquement
 
 ````md magic-move

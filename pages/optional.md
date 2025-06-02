@@ -40,7 +40,7 @@ Java 8+
     - `ofNullable(T value)` Retourne une instance contenant la valeur potentiellement vide
     - `empty()` Retourne une instance vide
 - Condition
-    - `filter(Predicate<T> predicate)` Filtre conditionellement la valeur
+    - `filter(Predicate<T> predicate)` Filtre conditionnellement la valeur
 - Transformation
     - `map(Function<T, U> predicate)` Transforme la valeur
 - Extraction
@@ -105,6 +105,6 @@ String upperCasedName = userRepositoryWithOptional.findById("2")
 
 - Syntaxes sémantiquement identiques
 - Référence de méthode dans les deux cas
-- Méthode anynome pour le cas d'une lambda
+- Méthode anonyme pour le cas d'une lambda
 
 </v-clicks>
