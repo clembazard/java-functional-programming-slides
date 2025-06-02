@@ -20,7 +20,7 @@ De quoi ?!
 
 ---
 layout: image-right
-image: assets/church.jpg
+image: /church.jpg
 ---
 # Programmation fonctionnelle
 
@@ -45,14 +45,14 @@ image: assets/church.jpg
 
 ---
 layout: image-left
-image: /assets/turing.jpg
+image: /turing.jpg
 ---
 
 # Fun fact
 
 ## 
 
-**Alan Turing**, a créé la machine de **Turing**, <br/> laquelle a mené aux fondations de la programmation <span v-mark="0">impérative</span>, <br/> était étudiant d'**Alonzo Chuch**.
+**Alan Turing**, créateur de la machine de **Turing**, <br/> laquelle a mené aux fondations de la programmation <span v-mark="0">impérative</span>, <br/> était étudiant d'**Alonzo Chuch**.
 
 ---
 

@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: /assets/DA25_TEAMS_4.png
+background: /DA25_TEAMS_4.png
 # some information about your slides (markdown enabled)
 title: ☕ Programmation Fonctionnelle en Java sans grimacer 😬
 # apply unocss classes to the current slide
