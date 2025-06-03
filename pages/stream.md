@@ -133,7 +133,7 @@ Stream<String> streamGenerated = Stream.generate(() -> "element")
 
 - `iterate()` prend :
     - Une valeur initiale 
-    - Un `UnaryOperator<T>` générer les itérations
+    - Un `UnaryOperator<T>` pour générer les itérations
 - Retourne un stream infini
 - `limit(int)` permet de spécifier la taille souhaitée
 
