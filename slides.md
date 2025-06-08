@@ -83,7 +83,7 @@ layout : center
   <!-- Openfeedback -->
   <div class="qr-block">
     <img src="/openfeedback-qr.svg"/>
-    <span>Open Feeback</span>
+    <span>Open Feedback</span>
   </div>
   <!-- Slides repo -->
   <div class="qr-block">

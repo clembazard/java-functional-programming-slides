@@ -252,7 +252,7 @@ transition: fade
 
 <<< @/snippets/curiosity/curiosity-5.java {all}{lines:true}
 
-```java {all}{lines:true}
+```java {3-4}{lines:true}
 return acteReferentialList.stream()
     .map(ActeUtils.isRelatedTo(acte))
     .map(ActeReferential::getDetails)
@@ -272,6 +272,6 @@ return acteReferentialList.stream()
 <v-clicks>
 
 - `findFirst()` retourne un *Optional* vide quand le stream est vide
-- `findFirst()` lance `NullPointerException` quand l'élément seléctionné est vide 🧠
+- `findFirst()` lance `NullPointerException` quand l'élément présent est `null` 🧠
 
 </v-clicks>
