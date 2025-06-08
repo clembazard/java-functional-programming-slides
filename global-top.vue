@@ -1,0 +1,3 @@
+<template>
+  <Pager/>
+</template>

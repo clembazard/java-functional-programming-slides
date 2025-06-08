@@ -20,6 +20,8 @@ mdc: true
 #  ogImage: https://cover.sli.dev
 # aspect ratio for the slides
 aspectRatio: 16/9
+addons:
+  - slidev-component-pager
 ---
 
 # ☕ Programmation Fonctionnelle en Java sans grimacer 😬
