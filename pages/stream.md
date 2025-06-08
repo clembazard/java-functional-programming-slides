@@ -14,6 +14,7 @@ Java 8+
 <!-- footer -->
 
 [The Stream API Tutorial - Baeldung](https://www.baeldung.com/java-8-streams)
+[Stream cheat sheet - JRebel](https://www.jrebel.com/system/files/java-8-streams-cheat-sheet.pdf)
 
 ---
 
@@ -22,7 +23,8 @@ Java 8+
 ## Qu'est-ce que c'est ?
 
 - API
-- <span v-mark>Piping</span> fonctionnel de une ou plusieurs valeurs
+- <span v-mark>Pipeline</span> fonctionnel sur une ou plusieurs valeurs
+- Ce n'est pas une structure de données
 - Sans impact sur la source
 
 
@@ -153,7 +155,7 @@ La valeur de départ peut être de n'importe quel type
 
 ## Opérations intermédiaires
 
-- Retournent un nouveau Stream
+- Retournent toujours un Stream
 - Chainable
 - Lazy (paresseuses / sans effets)
     - Invoquées à l’exécution d'une opération terminale
@@ -253,8 +255,8 @@ long size = list.stream()
 
 - Peuvent traverser le ***Stream*** pour produire un résultat / un effet de bord
 - ⚠️ Une seule par ***Stream*** maximum
-    - Après le ***Stream*** est considéré consommé 
     - Retourne un résultat qui n'est pas un ***Stream***
+    - Après le ***Stream*** est considéré consommé 
 - Invocation immédiate (eager)
 
 ````md magic-move
@@ -497,3 +499,9 @@ int reducedParams = Stream.of(1, 2, 3)
 ```
 
 ````
+
+---
+layout: image
+image: /java-8-streams-cheat-sheet.png
+backgroundSize: contain
+---
