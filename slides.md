@@ -72,7 +72,40 @@ src: ./pages/curiosity.md
 ---
 
 ---
-layout : end
+layout : center
 ---
 
 # 😉 Prenez soin du code ! 
+
+<div class="qr-container">
+  <!-- Openfeedback -->
+  <div class="qr-block">
+    <img src="/openfeedback-qr.svg"/>
+    <span>Open Feeback</span>
+  </div>
+  <!-- Slides repo -->
+  <div class="qr-block">
+    <img src="/slides-repo-qr.svg"/>
+    <span>Slides</span>
+  </div>
+</div>
+
+<style>
+  .qr-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    img {
+      width: 15em;
+    }
+  }
+
+  .qr-block {
+    display: flex;
+    flex-direction: column;
+ 
+    span {
+      text-align: center;
+    }
+  }
+</style>
