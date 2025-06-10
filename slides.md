@@ -26,7 +26,7 @@ addons:
 
 # ☕ Programmation Fonctionnelle en Java sans grimacer 😬
 
-Pour développeurs débutant et expérimentés
+Pour développeurs débutants et expérimentés
 
 ---
 layout: quote

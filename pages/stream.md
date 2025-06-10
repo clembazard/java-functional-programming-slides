@@ -328,6 +328,7 @@ String joined = stream.collect(Collectors.joining(" "));
 - `long count()` Compte les éléments du Stream
 - `T[] toArray()` Collecte les éléments dans un tableau
 - `List<T> toList()` Collecte les éléments dans une liste
+    - ⚠️ Attention, liste immuable
 
 <br/>
 
@@ -360,7 +361,7 @@ List<Product> productList = List.of(new Product(23, "potatoes"),
 ```java {all}{lines:true}
 List<String> collectorCollection = productList.stream()
     .map(Product::getName)
-    .collect(Collectors.toList());
+    .collect(Collectors.toList()); // ⚠️ Liste immuable
 ```
 
 <!-- toString -->

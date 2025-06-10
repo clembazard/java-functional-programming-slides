@@ -52,7 +52,7 @@ image: /turing.jpg
 
 ## 
 
-**Alan Turing**, créateur de la machine de **Turing**, <br/> laquelle a mené aux fondations de la programmation <span v-mark="0">impérative</span>, <br/> était étudiant d'**Alonzo Chuch**.
+**Alan Turing**, créateur de la machine de **Turing**, <br/> laquelle a mené aux fondations de la programmation <span v-mark="0">impérative</span>, <br/> était étudiant d'**Alonzo Church**.
 
 ---
 
@@ -144,12 +144,13 @@ Haskell Curry - Logicien & Mathématicien américain
 1. Calculs mathématiques
 2. Traitements concurrents / parallèles
 3. Programmation réactive
+4. Data
  
 <br/>
 
 ## Langages compatibles
 
-**Haskell**, **Erlan**, **OCaml**, **Python**, **Scala**, **JavaScript**, **Java**, etc.
+**Haskell**, **Erlang**, **OCaml**, **Python**, **Scala**, **JavaScript**, **Java**, etc.
 
 <!-- 
 
@@ -157,8 +158,11 @@ Programmation réactive:
  - ReactiveX (RxJS, RxJava)
  - Reactor (Spring Webflux)
 
+Data : Spark
 
 Facts : 
 Whatsapp: Erlang pour ses besoin traitements concurrents
 Facebook: Haskell dans son système anti-spam
+
+
 -->
