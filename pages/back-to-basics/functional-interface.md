@@ -60,7 +60,7 @@ transition: fade
 
 <<< @/snippets/functional-interface/FunctionImpl.java {all}{lines:true}
 
-```java
+```java {all}{lines:true}
 public class MyClass {
 
     // new style anonymous implementation - lambda expression
