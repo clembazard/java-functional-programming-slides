@@ -67,9 +67,6 @@ image: /turing.jpg
     - ${\displaystyle f} : x \mapsto x + 2$ (notation mathématique)
 - ⚠️ Un seul argument par fonction
 
-<!-- 
-Haskell Curry - Logicien & Mathématicien américain
--->
 ---
 
 # Programmation fonctionnelle
@@ -83,6 +80,10 @@ Haskell Curry - Logicien & Mathématicien américain
     - ${\displaystyle f} x \mapsto {\displaystyle f} y \mapsto x + y$ (notation mathématique)
 
 
+<!-- 
+Haskell Curry - Logicien & Mathématicien américain
+-->
+
 ---
 
 # Programmation fonctionnelle
@@ -92,7 +93,7 @@ Haskell Curry - Logicien & Mathématicien américain
 1. Fonctions pures
     - Comportement dépendant uniquement de ses arguments $\to$ prédictible
 2. Fonctions sont des variables de classe
-    - Peuvent consommer / retourner d'autres fonctions (ordre supérieur)
+    - Peuvent consommer / retourner d'autres fonctions
 3. Variables immuables
     - État constant, limite les potentiels effets de bord
 4. Transparence référentielle

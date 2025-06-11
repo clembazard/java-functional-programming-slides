@@ -41,7 +41,7 @@ Java 8+
 - Condition
     - `filter(Predicate<T> predicate)` Filtre conditionnellement la valeur
 - Transformation
-    - `map(Function<T, U> predicate)` Transforme la valeur
+    - `map(Function<T, U> mapper)` Transforme la valeur
 - Sélection
     - `limit(long maxSize)` Retourne un stream tronqué d'une taille maximale de `maxSize`
     - `skip(long n)` Retourne un stream les elements restant après avoir passé les n premiers

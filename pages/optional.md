@@ -42,7 +42,7 @@ Java 8+
 - Condition
     - `filter(Predicate<T> predicate)` Filtre conditionnellement la valeur
 - Transformation
-    - `map(Function<T, U> predicate)` Transforme la valeur
+    - `map(Function<T, U> mapper)` Transforme la valeur
 - Extraction
     - `get()` Extrait la valeur ou lance `NoSuchElementException` si vide
     - `orElse(T other)` Extrait la valeur ou *other* si vide
